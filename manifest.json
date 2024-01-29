@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "rymid3v2export",
+    "version": "1.0",
+  
+    "description": "Export RYM release pages to an ID3v2 tag file, to be used by tagging programs for better efficiency and accuracy.",
+  
+    "icons": {
+      "48": "icons/border-48.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.mozilla.org/*"],
+        "js": ["rymid3v2export.js"]
+      }
+    ]
+  }
+  
