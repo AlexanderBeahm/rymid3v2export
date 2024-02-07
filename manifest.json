@@ -1,21 +1,25 @@
 {
-    "manifest_version": 2,
-    "name": "rymid3v2export",
-    "version": "1.0",
-    "description": "Export RYM release pages to an ID3v2 tag file, to be used by tagging programs for better efficiency and accuracy.",
-    "homepage_url": "https://github.com/AlexanderBeahm/rymid3v2export",
-    
-    "icons": {
-      "48": "icons/border-48.png"
-    },
+  "manifest_version": 2,
+  "name": "rymid3v2export",
+  "version": "1.0",
+  "description": "Export RYM release pages to an ID3v2 tag file, to be used by tagging programs for better efficiency and accuracy.",
+  "homepage_url": "https://github.com/AlexanderBeahm/rymid3v2export",
 
-    "permissions": ["activeTab"],
-  
-    "content_scripts": [
-      {
-        "matches": ["*://*.mozilla.org/*"],
-        "js": ["rymid3v2export.js"]
-      }
-    ]
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "permissions": ["activeTab", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.rateyourmusic.com/*"],
+      "js": ["rymid3v2export.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["export.js"]
+  },
+  "browser_action": {
+    "default_title": "rymid3v2export"
   }
-  
+}
